@@ -11,7 +11,7 @@ public class App {
                 griglia[i][j] = '-';
             }
         }
-
+        boolean turnoUtente = true;
 
         for (int i = 0; i < 9; i++) {
             int posizionaX, posizionaY;
@@ -19,7 +19,13 @@ public class App {
             boolean posizioneCorretta, cellaOccupata;
             do {
                 do {
-                    System.out.println("Posiziona la X");
+                    if (turnoUtente){
+                        System.out.println("Posiziona la X");
+                    }
+                    else { 
+                        System.out.println("Posiziona la O");
+                    }
+                    System.out.println();
                     posizionaX = sc.nextInt();
                     posizionaY = sc.nextInt();
 
@@ -35,16 +41,21 @@ public class App {
                 }
             } while (cellaOccupata);
 
-            griglia[posizionaY][posizionaX] = 'X';
-
+            if (turnoUtente) {
+                griglia[posizionaY][posizionaX] = 'X';
+            } 
+            else{
+                griglia[posizionaY][posizionaX] = 'O';
+            }
+            turnoUtente=!turnoUtente;
+                
             for (int j = 0; j < griglia.length; j++) {
                 for (int k = 0; k < griglia[j].length; k++) {
-                    System.out.print(griglia[j][k]);
+                        System.out.print(griglia[j][k]);
+                    }
+                    System.out.println();
                 }
-                System.out.println();
-            }
         }
-
 
     }
 }
