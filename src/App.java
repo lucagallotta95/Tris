@@ -62,6 +62,14 @@ public class App {
                 }
                 System.out.println();
             }
+            if(
+                (griglia[0][0] =='X'&& griglia[0][1] =='X'&& griglia[0][2] =='X') ||
+                (griglia[1][0] =='X'&& griglia[1][1] =='X'&& griglia[1][2] =='X') ||
+                (griglia[2][0] =='X'&& griglia[2][1] =='X'&& griglia[2][2] =='X') ||
+                (griglia[0][0] =='X'&& griglia[1][0] =='X'&& griglia[2][0] =='X') ||
+                ()
+
+            )
         }
 
     }
